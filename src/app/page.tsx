@@ -1,3 +1,11 @@
+"use client";
+import Contador from "./components/Contador";
+import { DataContextProvider } from "./contexts/DataContextProvider";
+
 export default function Home() {
-  return <h1>Hola mundo</h1>;
+  return (
+    <DataContextProvider>
+      <Contador />
+    </DataContextProvider>
+  );
 }
