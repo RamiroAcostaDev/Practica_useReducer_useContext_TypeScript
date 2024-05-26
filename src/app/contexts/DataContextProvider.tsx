@@ -60,10 +60,10 @@ const reducer = (state: InitialState, action: Actions) => {
         restar: restar(state.primerNumero, state.segundoNumero),
         multiplicacion: state.multiplicarCheck
           ? multiplicar(state.primerNumero, state.segundoNumero)
-          : state.multiplicacion,
+          : (state.multiplicacion = 0),
         division: state.dividirCheck
           ? dividir(state.primerNumero, state.segundoNumero)
-          : state.division,
+          : (state.division = 0),
       };
     default:
       return state;
@@ -73,6 +73,7 @@ const reducer = (state: InitialState, action: Actions) => {
 const sumar = (a: number, b: number) => a + b;
 const restar = (a: number, b: number) => a - b;
 const multiplicar = (a: number, b: number) => a * b;
+
 const dividir = (a: number, b: number) => a / b;
 
 const DataContextProvider = ({ children }: DataContextProviderProps) => {
