@@ -1,11 +1,18 @@
 "use client";
-import Contador from "./components/Contador";
-import { DataContextProvider } from "./contexts/DataContextProvider";
+import Lista from "./components/Lista";
+import Formulario from "./components/Formulario";
+import { Box } from "@mui/material";
 
 export default function Home() {
   return (
-    <DataContextProvider>
-      <Contador />
-    </DataContextProvider>
+    <Box
+      display={"flex"}
+      justifyContent={"center"}
+      alignItems={"center"}
+      gap={5}
+    >
+      <Formulario />
+      <Lista />
+    </Box>
   );
 }
